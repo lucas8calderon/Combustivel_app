@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cards.QuantoVouGastarActivity">
+
+
+    <include layout="@layout/toolbar_quanto_vou_gastar"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tplDat2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_quanto">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editDistancia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_borda_arredondada_azul"
+            android:drawableStart="@drawable/percorer_novo"
+            android:drawablePadding="16dp"
+            android:hint="Distância a percorrer"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tplDat3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tplDat2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editRendimento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_borda_arredondada_azul"
+            android:drawableStart="@drawable/lucro"
+            android:drawablePadding="16dp"
+            android:hint="Rendimento por litro"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tplDat4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tplDat3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editValor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_borda_arredondada_azul"
+            android:drawableStart="@drawable/valor_litro"
+            android:drawablePadding="16dp"
+            android:hint="Valor do combustível por litro"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/bg_borda_arredondada_azul"
+        android:backgroundTint="#E1DEDE"
+        android:text="Calcular"
+        android:onClick="calcularPreco"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tplDat3">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_limpar"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/bg_borda_arredondada_azul"
+        android:backgroundTint="#E1DEDE"
+        android:onClick="limpar"
+        android:text="Limpar"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tplDat3">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_borda_arredondada_azul"
+        android:padding="8dp"
+
+        android:text="Cálculo usado para descobrir quanto irá gastar para percorrer um determinado trajeto."
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="Informativo"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:textColor="@color/black"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:text="Resultado" />
+
+    <TextView
+        android:id="@+id/textResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:text="aaa" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

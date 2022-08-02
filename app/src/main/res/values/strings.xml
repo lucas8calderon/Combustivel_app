@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Combustivel</string>
+
+    //headings
+
+    <string name="heading_1">Com o Aplicativo você controla as despesas de seus veiculos de maneira rápida e prática.</string>
+    <string name="heading_2">Possivel gerar relatórios e gráficos completos de abastecimentos, serviços e despesas.</string>
+    <string name="heading_3">Ainda te ajudamos a não esquecer de manutenções recorrentes.</string>
+    <string name="heading_4">Saiba o consumo do seu carro, gastos e sugetões para economizar em todas viagens.</string>
+    <string name="google_map_key">AIzaSyCwjYB4TmajNqt3SU0-hnR-nr9EJUw3JQQ</string>
+    <string name="mic">mic</string>
+    <string name="gps">gps</string>
+    <string name="add">add</string>
+
+
+</resources>
