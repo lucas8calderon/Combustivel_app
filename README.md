@@ -50,6 +50,7 @@ O projeto foi desenvolvido utilizando as seguintes Ferramentas:
 
 - Android Studio
 - Java
+- Onboarding
 - XML
 - Intents
 - Bundle
