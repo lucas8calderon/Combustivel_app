@@ -9,7 +9,7 @@
 
 - [Preview](#-Preview)
 - [Sobre](#-Sobre)
-- [Tecnologias utilizadas](#-Tecnologias-utilizadas)
+- [Tecnologias utilizadas](#-Ferramentas-utilizadas)
 
 ---
 
