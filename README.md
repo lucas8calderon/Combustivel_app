@@ -16,14 +16,21 @@
 ## 🖥 Preview
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/69876467/155195485-8ad1886e-3628-49d4-bc45-b9a96a01a5eb.png" width="150">
-<img src="https://user-images.githubusercontent.com/69876467/155195460-be7fbd67-8583-4b21-a7a2-b21801a76328.png" width="150">
-<img src="https://user-images.githubusercontent.com/69876467/155195476-c551b7a2-6c67-4067-8fe8-1b556daf7bb6.png" width="150">
-<img src="https://user-images.githubusercontent.com/69876467/155195455-160dfea0-9ddd-44ab-8686-5d29f776a55f.png" width="150">
-<img src="https://user-images.githubusercontent.com/69876467/155195448-38b35b56-cc4c-46ee-83f8-bb680364f245.png" width="150">
-<img src="https://user-images.githubusercontent.com/69876467/155195467-c3731829-72bf-4377-be6a-8a9aa1688aab.png" width="150">
-<img src="https://user-images.githubusercontent.com/69876467/155195470-b902a97e-148f-4776-8a76-56c6f4391799.png" width="150">
-<img src="https://user-images.githubusercontent.com/69876467/155195474-c0a64328-80c4-43a7-838e-708df0135314.png" width="150">
+
+ <img src="https://user-images.githubusercontent.com/87238842/182443779-4e5a32d7-0acf-4ca8-9f83-07a5bf5fe154.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443784-26c002f9-d8db-4883-81f0-388c01d4a592.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443788-da8b56ca-ed67-4c62-8bcb-a3618cb55e74.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443789-d8422e88-769a-4e7e-a680-721ca0726687.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443790-4c943e25-e27b-40d6-8ad5-800f04cbd90b.png" width="150">
+ <img src="(https://user-images.githubusercontent.com/87238842/182443791-b660906c-6b09-4e29-95f3-33ad00bc2e4f.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443797-c9656c2f-c871-4cfd-ac1d-3be979a082ff.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443800-67ea6f06-6058-46f7-8bec-8aab632fe78c.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443801-802bc1b0-4aa9-48cd-a25c-ebc798ffc522.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443802-f2f1b110-0a69-4ff3-a133-2a89ef08dd45.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443806-74930bdb-6385-45fe-a8cb-bc6a957172d3.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443808-41c42b27-03bb-45dc-a0f0-892daba8375d.png" width="150">
+ <img src="https://user-images.githubusercontent.com/87238842/182443812-ab9d2add-de35-42d9-abef-105af8295df5.png" width="150">
+
 
  
 </div>
@@ -32,20 +39,33 @@
 
 ## 📖 Sobre
 
-A proposta do projeto é a criação de um app de banco digital.
-Este projeto foi desenvolvido durante a jornada do fourcamp, com intuito de aprimorar os conhecimentos em desenvolvimento de android nativo.
+A proposta do projeto é a criação de um app de calculos de consumo e aproveitamento de combustivel.
+Este projeto foi desenvolvido durante minha jornada de estudos, com intuito de aprimorar os conhecimentos em desenvolvimento de android nativo.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## 🚀 Ferramentas utilizadas
 
-O projeto foi desenvolvido utilizando as seguintes tecnologias:
+O projeto foi desenvolvido utilizando as seguintes Ferramentas:
 
 - Android Studio
-- Firebase
 - Java
 - XML
+- Intents
+- Bundle
+- Splash Activity Animada
+- Navegação entre Activities
+- ViewPager
+- Lógica de Programação
+- POO
+- Dialog
+- RecyclerView
+- Banco de Dados (Armazenamento interno com sqlite)
+- Floating Bottom
+- Bottom Navigation
+- Webview (Acessando o google maps)
+- Layouts
 
 ---
 
-Desenvolvido por Daniel Lopes, Pedro Henrique, Lucas Petros, Henrique Marinho, Eduardo Barbosa e Leonardo Arthur.
+Desenvolvido por Lucas Alves da Silva Calderon.
