@@ -1,4 +1,4 @@
-package com.lucascalderon1.combustivel;
+package com.lucascalderon1.combustivel.helper;
 
 public class ViewPagerItem  {
 

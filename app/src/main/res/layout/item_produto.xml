@@ -24,6 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Posto"
+        android:textStyle="bold"
+        android:inputType="date"
         android:textColor="#707273"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_produto" />

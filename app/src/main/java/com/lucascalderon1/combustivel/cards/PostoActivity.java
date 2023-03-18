@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -53,9 +54,11 @@ public class PostoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posto);
 
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
         webView = (WebView) findViewById(R.id.webv);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://google.com/maps/search/?api=1&querye");
+        webView.loadUrl("https://www.google.com/maps/search/posto+de+gasolina+mais+proximo/@-23.481541,-46.350336,13z/data=!3m1!4b1");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -72,39 +75,4 @@ public class PostoActivity extends AppCompatActivity {
     }
 }
 
-//    public void buscarInformacoesGPS(View view) {
-//
-//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-//                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//
-//            ActivityCompat.requestPermissions(PostoActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-//            ActivityCompat.requestPermissions(PostoActivity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-//            ActivityCompat.requestPermissions(PostoActivity.this, new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, 1);
-//            return;
-//        }
-//
-//        LocationManager mLockManager = (LocationManager) getSystemService(PostoActivity.this.LOCATION_SERVICE);
-//        LocationListener mLockListener = new MinhaLocalizacaoListener();
-//
-//        mLockManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, mLockListener);
-//
-//        if (mLockManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-//            String texto = "latitude: " + MinhaLocalizacaoListener.latitude + " \n" +
-//                    "longitude: " + MinhaLocalizacaoListener.longitude + "\n";
-//            Toast.makeText(PostoActivity.this, texto, Toast.LENGTH_SHORT).show();
-//        } else {
-//            Toast.makeText(PostoActivity.this, "Localização desabilitada.", Toast.LENGTH_SHORT).show();
-//        }
-//
-//        this.mostrarGoogleMaps(MinhaLocalizacaoListener.latitude, MinhaLocalizacaoListener.longitude);
-//
-//    }
-//}
-//
-////        public void mostrarGoogleMaps(double latitude, double longitude) {
-////            WebView wv = findViewById(R.id.webv);
-////            wv.getSettings().setJavaScriptEnabled(true);
-////            wv.loadUrl("https://google.com/maps/search/?api=1&querye" + latitude + "," + longitude);
-////        }
-////    }
 

@@ -1,4 +1,4 @@
-package com.lucascalderon1.combustivel;
+package com.lucascalderon1.combustivel.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.lucascalderon1.combustivel.helper.Produto;
+import com.lucascalderon1.combustivel.R;
+
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHolder> {
@@ -32,12 +36,20 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.MyViewHo
         Produto produto = produtoList.get(position);
 
         holder.textProduto.setText(produto.getNome());
-        holder.textData.setText("Data: " + produto.getData());
+
+        if (produto.getData() != null) {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            String dataFormatada = dateFormat.format(produto.getData());
+            holder.textData.setText("Data: " + dataFormatada);
+        } else {
+            holder.textData.setText("Data: -");
+        }
+
         holder.textValor.setText("R$ " + produto.getValor());
 
         holder.itemView.setOnClickListener(v -> onClick.onClickListener(produto));
-
     }
+
 
     @Override
     public int getItemCount() {

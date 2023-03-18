@@ -29,7 +29,7 @@
             android:background="@drawable/bg_borda_arredondada_azul"
             android:drawableStart="@drawable/valor_litro"
             android:drawablePadding="16dp"
-            android:hint="Litros abastecidos"
+            android:hint="Quantidade de combustível"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,7 +54,7 @@
             android:background="@drawable/bg_borda_arredondada_azul"
             android:drawableStart="@drawable/percorer_novo"
             android:drawablePadding="16dp"
-            android:hint="Distancia percorrida"
+            android:hint="Distância percorrida em km"
             android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,31 +96,6 @@
 
     </androidx.appcompat.widget.AppCompatButton>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/bg_borda_arredondada_azul"
-        android:padding="8dp"
-        android:text="Este cálculo é usado para obter a média de consumo do veiculo após abastecer o tanque completamente na reserva."
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:text="Informativo"
-        android:textColor="@color/black"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
         android:id="@+id/textView4"
@@ -144,10 +119,25 @@
         android:textSize="18sp"
         android:textStyle="bold"
       android:gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         tools:text="aaa" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3210027481434346/9644889251"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

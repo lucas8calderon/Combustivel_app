@@ -2,34 +2,37 @@ package com.lucascalderon1.combustivel.cards;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lucascalderon1.combustivel.AdapterProduto;
-import com.lucascalderon1.combustivel.FormProdutoActivity;
-import com.lucascalderon1.combustivel.Produto;
-import com.lucascalderon1.combustivel.ProdutoDAO;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.lucascalderon1.combustivel.adapter.AdapterProduto;
+import com.lucascalderon1.combustivel.activity.FormProdutoActivity;
+import com.lucascalderon1.combustivel.helper.Produto;
+import com.lucascalderon1.combustivel.helper.ProdutoDAO;
 import com.lucascalderon1.combustivel.R;
+import com.lucascalderon1.combustivel.home.HomeActivity;
 import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
 import com.tsuryo.swipeablerv.SwipeableRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PrimitiveIterator;
 
 public class RegistrosActivity extends AppCompatActivity implements AdapterProduto.OnClick {
+
+    private AdView adView;
     private AdapterProduto adapterProduto;
     private List<Produto> produtoList = new ArrayList<>();
     private SwipeableRecyclerView rvProdutos;
     private TextView text_info;
-    private ImageButton ibAdd, ibVerMais;
+    private ImageButton ibAdd, ib_voltar;
     private ProdutoDAO produtoDAO;
 
     @Override
@@ -37,11 +40,20 @@ public class RegistrosActivity extends AppCompatActivity implements AdapterProdu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registros);
 
+        MobileAds.initialize(this, initializationStatus -> {
+
+        });
+
+        adView= findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
+
         produtoDAO = new ProdutoDAO(this);
         produtoList = produtoDAO.getListProdutos();
         text_info = findViewById(R.id.text_info);
         ibAdd = findViewById(R.id.ib_add);
-        ibVerMais = findViewById(R.id.ib_ver_mais);
+        ib_voltar = findViewById(R.id.ib_voltar);
+
 
 
 
@@ -50,6 +62,13 @@ public class RegistrosActivity extends AppCompatActivity implements AdapterProdu
         rvProdutos = findViewById(R.id.rvProdutos);
         configRecyclerView();
         ouvinteCliques();
+
+        ib_voltar = findViewById(R.id.ib_voltar);
+        ib_voltar.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            finish();
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -63,24 +82,13 @@ public class RegistrosActivity extends AppCompatActivity implements AdapterProdu
             startActivity(new Intent(this, FormProdutoActivity.class));
         });
 
-        ibVerMais.setOnClickListener(v -> {
-            PopupMenu popupMenu = new PopupMenu(this, ibVerMais);
-            popupMenu.getMenuInflater().inflate(R.menu.menu_toolbar, popupMenu.getMenu());
 
-
-            popupMenu.setOnMenuItemClickListener(menuItem -> {
-                if (menuItem.getItemId() == R.id.menu_sobre){
-                    Toast.makeText(this, "Sobre", Toast.LENGTH_SHORT).show();
-                }
-                return true;
-            });
-
-            popupMenu.show();
-        });
 
 
 
     }
+
+
 
 
     private void configRecyclerView(){
@@ -95,6 +103,8 @@ public class RegistrosActivity extends AppCompatActivity implements AdapterProdu
         rvProdutos.setListener(new SwipeLeftRightCallback.Listener() {
             @Override
             public void onSwipedLeft(int position) {
+                Toast.makeText(RegistrosActivity.this, "ainda não é possível editar, atualize a pagina.", Toast.LENGTH_SHORT).show();
+
 
             }
 
@@ -108,9 +118,6 @@ public class RegistrosActivity extends AppCompatActivity implements AdapterProdu
                 adapterProduto.notifyItemRemoved(position);
 
                 verificaQtdLista();
-
-
-
 
 
             }
@@ -137,4 +144,6 @@ public class RegistrosActivity extends AppCompatActivity implements AdapterProdu
       intent.putExtra("produto", produto);
       startActivity(intent);
     }
+
+
 }

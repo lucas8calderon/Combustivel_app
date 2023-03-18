@@ -1,30 +1,18 @@
 package com.lucascalderon1.combustivel.home;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.animation.OvershootInterpolator;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupMenu;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.lucascalderon1.combustivel.AdapterProduto;
-import com.lucascalderon1.combustivel.FormProdutoActivity;
-import com.lucascalderon1.combustivel.Produto;
-import com.lucascalderon1.combustivel.ProdutoDAO;
+import com.lucascalderon1.combustivel.adapter.AdapterProduto;
+import com.lucascalderon1.combustivel.activity.FormProdutoActivity;
+import com.lucascalderon1.combustivel.helper.Produto;
+import com.lucascalderon1.combustivel.helper.ProdutoDAO;
 import com.lucascalderon1.combustivel.R;
 import com.lucascalderon1.combustivel.cards.AlcoolOuGasolinaActivity;
 import com.lucascalderon1.combustivel.cards.DistanciaActivity;
@@ -36,25 +24,36 @@ import com.tsuryo.swipeablerv.SwipeLeftRightCallback;
 import com.tsuryo.swipeablerv.SwipeableRecyclerView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class HomeActivity extends AppCompatActivity  implements AdapterProduto.OnClick {
+public class HomeActivity extends AppCompatActivity implements AdapterProduto.OnClick {
 
     private AdapterProduto adapterProduto;
+
+
+
+
     private List<Produto> produtoList = new ArrayList<>();
     private SwipeableRecyclerView rvProdutos;
     private FloatingActionButton fab_add;
     private ProdutoDAO produtoDAO;
-    private ConstraintLayout layoutTransfer, layoutTransfer2, layoutTransfer3, layoutTransfer4, layoutTransfe5,layoutTransfer6;
-
+    private ConstraintLayout layoutTransfer, layoutTransfer2, layoutTransfer3, layoutTransfer4, layoutTransfe5, layoutTransfer6;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
+
+
+
+
         produtoDAO = new ProdutoDAO(this);
         produtoList = produtoDAO.getListProdutos();
+
 
         layoutTransfer6 = findViewById(R.id.layoutTransfer6);
         layoutTransfer6.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +121,9 @@ public class HomeActivity extends AppCompatActivity  implements AdapterProduto.O
             }
         });
 
+
     }
+
 
     @Override
     protected void onStart() {
@@ -131,10 +132,11 @@ public class HomeActivity extends AppCompatActivity  implements AdapterProduto.O
     }
 
 
-    private void configRecyclerView(){
+    private void configRecyclerView() {
 
         produtoList.clear();
         produtoList = produtoDAO.getListProdutos();
+        Collections.reverse(produtoList);
 
         rvProdutos.setLayoutManager(new LinearLayoutManager(this));
         rvProdutos.setHasFixedSize(true);
@@ -159,8 +161,6 @@ public class HomeActivity extends AppCompatActivity  implements AdapterProduto.O
         });
 
     }
-
-
 
 
     @Override

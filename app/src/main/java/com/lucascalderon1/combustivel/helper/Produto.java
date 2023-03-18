@@ -1,21 +1,14 @@
-package com.lucascalderon1.combustivel;
+package com.lucascalderon1.combustivel.helper;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class Produto implements Serializable {
 
     private String nome;
-    private int data;
+    private Date data;
     private double valor;
     private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -25,11 +18,11 @@ public class Produto implements Serializable {
         this.nome = nome;
     }
 
-    public int getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(int data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
@@ -39,5 +32,13 @@ public class Produto implements Serializable {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

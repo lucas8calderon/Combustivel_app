@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.lucascalderon1.combustivel">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
@@ -19,18 +19,17 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon_inicial"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Combustivel"
+        android:theme="@style/Theme.Light.Combustivel"
         tools:targetApi="31">
         <activity
-            android:name=".FormProdutoActivity"
+            android:name=".onboarding.IntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.FormProdutoActivity"
             android:exported="false" />
         <activity
             android:name=".cards.RegistrosActivity"
             android:exported="false" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCwjYB4TmajNqt3SU0-hnR-nr9EJUw3JQQ" />
 
         <activity
             android:name=".cards.PostoActivity"
@@ -51,13 +50,10 @@
             android:name=".home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".dicas.VeiculosActivity"
+            android:name=".activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,6 +61,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3210027481434346~7812669507" />
+
+
     </application>
 
 </manifest>

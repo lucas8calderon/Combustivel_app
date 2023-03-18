@@ -1,4 +1,4 @@
-package com.lucascalderon1.combustivel;
+package com.lucascalderon1.combustivel.helper;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

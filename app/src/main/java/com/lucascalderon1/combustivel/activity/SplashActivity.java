@@ -1,4 +1,4 @@
-package com.lucascalderon1.combustivel;
+package com.lucascalderon1.combustivel.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.lucascalderon1.combustivel.R;
+import com.lucascalderon1.combustivel.onboarding.IntroActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -37,7 +40,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void ActivityLogin() {
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+        Intent intent = new Intent(SplashActivity.this, IntroActivity.class);
         startActivity(intent);
 
     }
