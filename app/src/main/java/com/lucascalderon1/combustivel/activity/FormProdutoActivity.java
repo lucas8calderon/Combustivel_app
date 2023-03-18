@@ -30,9 +30,11 @@ public class FormProdutoActivity extends AppCompatActivity {
     private Produto produto;
 
     private final String FORMATO_VALOR_REAL = "R$ #,##0.00";
+    private final DecimalFormat decimalFormat = new DecimalFormat(FORMATO_VALOR_REAL);
+
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-    private final DecimalFormat decimalFormat = new DecimalFormat(FORMATO_VALOR_REAL);
+
 
 
     @Override
@@ -89,7 +91,7 @@ public class FormProdutoActivity extends AppCompatActivity {
     public void salvarProduto(View view) {
         String nome = edit_produto.getText().toString();
         String data = edit_data.getText().toString();
-        String valor = edit_valor.getText().toString();
+        String valor = edit_valor.getText().toString().replaceAll("[^0-9.,]+", "");
 
         if (!nome.isEmpty()) {
             if (!data.isEmpty()) {
@@ -102,7 +104,7 @@ public class FormProdutoActivity extends AppCompatActivity {
                 }
                 if (qntd >= 1) {
                     if (!valor.isEmpty()) {
-                        double valorProduto = Double.parseDouble(MascaraValorReal.unmask(edit_valor.getText().toString()));
+                        double valorProduto = Double.parseDouble(valor.replace(",", "."));
                         if (valorProduto > 0) {
                             if (produto == null) produto = new Produto();
                             produto.setNome(nome);
